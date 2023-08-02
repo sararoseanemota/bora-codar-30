@@ -349,7 +349,12 @@ const data = {
   total_results: 787445,
 }
 
-function createMovieLayout({ title, stars, image }) {
+//get nas informações extas do filme
+//api.themoviedb.org/3/movie/{movie_id}
+
+//quando clicar no botão assistir trailer
+//https://api.themoviedb.org/3/movie/{movie_id}/videos
+https: function createMovieLayout({ id, title, stars, image, time, year }) {
   return ` <div class="movie">
             <div class="title">
               <span>${title}</span>
@@ -368,17 +373,17 @@ function createMovieLayout({ title, stars, image }) {
               <div class="duration">
                 <img src="./assets/icons/clock.svg" alt="" />
 
-                <span>1:54:00</span>
+                <span>${time}</span>
               </div>
 
               <div class="year">
                 <img src="./assets/icons/calendar.svg" alt="" />
 
-                <span>2023</span>
+                <span>${year}</span>
               </div>
             </div>
 
-            <button>
+            <button onclick="watch()" data-id="${id}">
               <img src="./assets/icons/play.svg" alt="" />
 
               <span>Assistir Trailer</span>
