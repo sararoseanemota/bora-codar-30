@@ -125,6 +125,7 @@ function select3Videos(results) {
 async function start() {
   //pegar as sugestões de filmes da API
   const { results } = await getMovies()
+  console.log(results)
 
   //pegar randomicamente 3 filmes para sugestão
   const best3 = select3Videos(results).map(async (movie) => {
