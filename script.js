@@ -459,5 +459,3 @@ async function start() {
   // substituir o conteudo dos movies no html
   document.querySelector(".movies").innerHTML = output.join("")
 }
-
-start()
